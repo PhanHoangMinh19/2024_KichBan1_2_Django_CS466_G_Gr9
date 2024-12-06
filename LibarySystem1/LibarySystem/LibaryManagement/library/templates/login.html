@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Login</h1>
+        <form method="POST">
+            {% csrf_token %}
+            <label>
+              Username:
+              <input type="text" name="username2" required>
+            </label>
+            <br>
+            <label>
+              Password:
+              <input type="password" name="password2" required>
+            </label>
+            <br>
+            <label>
+                Don't have an account? <a href="{% url 'signup' %}">Sign up now</a>
+            </label>
+            <br>
+            <button type="submit">Sign in</button>
+        </form>
+    </div>
+    <div class="flash-messages">
+        {% if messages %}
+            <ul>
+                {% for message in messages %}
+                <li class="alert {{ message.tags }}">{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+</body>
+</html>

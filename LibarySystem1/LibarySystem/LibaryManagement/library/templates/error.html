@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Access Denied</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/adsty.css' %}">
+</head>
+<body>
+    <div class="tabbar">
+        Access Denied
+    </div>
+    <div class="container">
+        <h1>Access Denied</h1>
+        <p>{{ message }}</p>
+        <a href="{% url 'dashboard_user' %}" class="button">Go to User Dashboard</a>
+        <a href="{% url 'dashboard_content_manager' %}" class="button">Go to Content Manager Dashboard</a>
+    </div>
+</body>
+</html>
